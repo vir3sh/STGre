@@ -2,11 +2,13 @@ import React from "react";
 import { Users, Heart, BookOpen, Award } from "lucide-react";
 import principalImage from "../assets/stgre-principal.jpeg";
 import logo from "../assets/logo.png"; // Assuming you have a logo image
+import Breadcrumb from "../components/Breadcrumb";
+import TrustSlider from "../components/TrustSlider";
 const PrincipalMessage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-900 to-indigo-900 text-white py-8 shadow-lg">
+      <header className="bg-gradient-to-br from-[#541418] to-gray-900 text-white py-8 shadow-lg">
         <div className="container mx-auto px-6">
           <h1 className="text-4xl font-bold text-center mb-2">
             St. Gregorios High School
@@ -108,61 +110,7 @@ const PrincipalMessage = () => {
           </div>
         </section>
 
-        {/* Trust Members Section */}
-        <section className="mb-16">
-          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-100">
-            <div className="flex items-center justify-center mb-8">
-              <div className="bg-gradient-to-r from-green-600 to-emerald-600 p-4 rounded-full">
-                <Users className="w-8 h-8 text-white" />
-              </div>
-            </div>
-
-            <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">
-              Trust Members
-            </h2>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Placeholder for Trust Members - Replace with actual data */}
-              <div className="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-lg transition-shadow">
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">TM</span>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">
-                  Trust Member
-                </h3>
-                <p className="text-sm text-gray-600">Position Title</p>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-lg transition-shadow">
-                <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">TM</span>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">
-                  Trust Member
-                </h3>
-                <p className="text-sm text-gray-600">Position Title</p>
-              </div>
-
-              <div className="bg-gray-50 rounded-xl p-6 text-center border border-gray-200 hover:shadow-lg transition-shadow">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full mx-auto mb-4 flex items-center justify-center">
-                  <span className="text-white font-bold text-xl">TM</span>
-                </div>
-                <h3 className="font-semibold text-gray-800 mb-2">
-                  Trust Member
-                </h3>
-                <p className="text-sm text-gray-600">Position Title</p>
-              </div>
-            </div>
-
-            <div className="mt-8 p-6 bg-blue-50 rounded-xl border border-blue-200">
-              <p className="text-center text-gray-700">
-                <strong>Note:</strong> This section will be updated with the
-                complete list of Trust Members. Please contact the school
-                administration for the most current information.
-              </p>
-            </div>
-          </div>
-        </section>
+        <TrustSlider />
 
         {/* Key Features */}
         <section className="mb-16">
@@ -229,26 +177,26 @@ const PrincipalMessage = () => {
             </h2>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white bg-opacity-10 rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-4 text-blue-300">
+              <div className="bg-white bg-opacity-10 rounded-xl p-6 text-black">
+                <h3 className="text-xl font-semibold mb-4 text-[#fcb900]">
                   Main Building
                 </h3>
                 <p className="mb-2">Gregorios Path, V.N. Purav Marg</p>
                 <p className="mb-2">Besides Fairlawn, Chembur</p>
                 <p className="mb-2">Mumbai - 400 071</p>
-                <p className="text-blue-300">
+                <p className="text-[#fcb900]">
                   Phone: (022) 35112723 / (022) 35112724
                 </p>
               </div>
 
-              <div className="bg-white bg-opacity-10 rounded-xl p-6">
-                <h3 className="text-xl font-semibold mb-4 text-green-300">
+              <div className="bg-white bg-opacity-10 rounded-xl p-6 text-black">
+                <h3 className="text-xl font-semibold mb-4 text-[#fcb900]">
                   New Building
                 </h3>
                 <p className="mb-2">N. B. Patil Marg</p>
                 <p className="mb-2">Chembur</p>
                 <p className="mb-2">Mumbai - 400 071</p>
-                <p className="text-green-300">Phone: 9324747718 / 8591879613</p>
+                <p className="text-[#fcb900]">Phone: 9324747718 / 8591879613</p>
               </div>
             </div>
           </div>
