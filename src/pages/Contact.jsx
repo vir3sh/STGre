@@ -11,7 +11,8 @@ import {
   Navigation,
   CheckCircle,
 } from "lucide-react";
-
+import Breadcrumb from "../components/Breadcrumb";
+import studentimage from "../assets/logo.png"; // Replace with your image path
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -45,6 +46,8 @@ const Contact = () => {
       landmark: "Besides Fairlawn",
       mapUrl:
         "https://maps.google.com/?q=St+Gregorios+High+School+Chembur+Main+Building",
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4098.958641015237!2d72.8962473515623!3d19.050038787202595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c61d34555555%3A0x8c85c263ef023923!2sSt.%20Gregorios%20High%20School!5e1!3m2!1sen!2sin!4v1752081195302!5m2!1sen!2sin",
     },
     {
       name: "New Building",
@@ -53,25 +56,77 @@ const Contact = () => {
       landmark: "Ghatla Area",
       mapUrl:
         "https://maps.google.com/?q=St+Gregorios+High+School+NB+Patil+Marg+Chembur",
+      mapEmbedUrl:
+        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5882.8362487393815!2d72.89873657770995!3d19.050512300000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c60508681da9%3A0xe7ce066a06e48b92!2sSt%20Gregorios%20High%20School%2C%20New%20Building%20Premises!5e1!3m2!1sen!2sin!4v1752081340509!5m2!1sen!2sin",
     },
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-br from-[#541418] via-red-900 to-[#541418] text-white py-20">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Contact Us</h1>
-          <p className="text-xl md:text-2xl text-red-100 max-w-3xl mx-auto">
-            We're here to help and answer any questions you might have. We look
-            forward to hearing from you.
-          </p>
-        </div>
-      </div>
+      <Breadcrumb title="Contact Us" />
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className=" mx-auto px-6 py-16">
         {/* Quick Contact Info */}
+
+        <div className="py-16 px-4">
+          <div className=" mx-auto bg-white rounded-3xl  overflow-hidden flex flex-col md:flex-row">
+            {/* Left Image Section */}
+            <div className="md:w-1/2">
+              <img
+                src={studentimage} // Replace with your image path
+                alt="Students walking"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Right Form Section */}
+            <div className="md:w-1/2 p-8 md:p-12">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                Get In Touch
+              </h2>
+              <p className="text-sm text-gray-500 mb-6">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page randomised words which don't
+                look even slightly when looking at its layout.
+              </p>
+
+              <form className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    placeholder="Your Name"
+                    className="border rounded-lg px-4 py-3 w-full text-sm focus:ring-2 focus:ring-[#541418] outline-none"
+                  />
+                  <input
+                    type="email"
+                    placeholder="Your Email"
+                    className="border rounded-lg px-4 py-3 w-full text-sm focus:ring-2 focus:ring-[#541418] outline-none"
+                  />
+                </div>
+
+                <input
+                  type="text"
+                  placeholder="Your Subject"
+                  className="border rounded-lg px-4 py-3 w-full text-sm focus:ring-2 focus:ring-[#541418] outline-none"
+                />
+
+                <textarea
+                  rows="4"
+                  placeholder="Write Your Message"
+                  className="border rounded-lg px-4 py-3 w-full text-sm focus:ring-2 focus:ring-[#541418] outline-none resize-none"
+                ></textarea>
+
+                <button
+                  type="submit"
+                  className="inline-flex items-center bg-[#fcb900] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#e2a600] transition-all"
+                >
+                  SEND MESSAGE <Send className="ml-2" size={18} />
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
 
         {/* Campus Locations */}
         <div className="mb-16">
@@ -84,16 +139,31 @@ const Contact = () => {
             {campuses.map((campus, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-4 shadow-lg hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300"
+                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300"
               >
-                <div className="flex items-center mb-6">
-                  <Building className="text-[#541418] mr-4" size={28} />
-                  <h3 className="text-2xl font-semibold text-gray-800">
-                    {campus.name}
-                  </h3>
+                {/* Map on Top */}
+                <div className="aspect-video">
+                  <iframe
+                    src={campus.mapEmbedUrl}
+                    width="100%"
+                    height="100%"
+                    className="w-full h-full"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
                 </div>
 
-                <div className="space-y-4">
+                {/* Info Section */}
+                <div className="p-4 space-y-4">
+                  <div className="flex items-center mb-2">
+                    <Building className="text-[#541418] mr-4" size={28} />
+                    <h3 className="text-2xl font-semibold text-gray-800">
+                      {campus.name}
+                    </h3>
+                  </div>
+
                   <div className="flex items-start">
                     <MapPin
                       className="text-[#541418] mr-3 mt-1 flex-shrink-0"
@@ -109,9 +179,10 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center">
-                    <Phone className="text-[#541418] mr-3" size={20} />
+                  <div className="flex items-start">
+                    <Phone className="text-[#541418] mr-3 mt-1" size={20} />
                     <div>
+                      <p className="text-gray-800 font-medium">Phone</p>
                       {campus.phones.map((phone, phoneIndex) => (
                         <p key={phoneIndex} className="text-gray-700">
                           {phone}
@@ -120,7 +191,7 @@ const Contact = () => {
                     </div>
                   </div>
 
-                  <div className="pt-4">
+                  <div className="pt-2">
                     <a
                       href={campus.mapUrl}
                       target="_blank"
@@ -138,194 +209,6 @@ const Contact = () => {
         </div>
 
         {/* Contact Form & Map Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <div className="bg-white rounded-2xl p-4 shadow-lg">
-            <h2 className="text-2xl font-bold mb-6 text-gray-800">
-              Send us a Message
-            </h2>
-
-            {isSubmitted && (
-              <div className="mb-6 p-4 bg-green-100 border border-green-300 rounded-lg flex items-center">
-                <CheckCircle className="text-green-600 mr-3" size={20} />
-                <p className="text-green-700">
-                  Thank you! Your message has been sent successfully.
-                </p>
-              </div>
-            )}
-
-            <div className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <div className="relative">
-                    <User
-                      className="absolute left-3 top-3 text-gray-400"
-                      size={20}
-                    />
-                    <input
-                      type="text"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#541418] focus:border-transparent outline-none transition-all duration-300"
-                      placeholder="Enter your full name"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <div className="relative">
-                    <Mail
-                      className="absolute left-3 top-3 text-gray-400"
-                      size={20}
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#541418] focus:border-transparent outline-none transition-all duration-300"
-                      placeholder="Enter your email"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <div className="relative">
-                    <Phone
-                      className="absolute left-3 top-3 text-gray-400"
-                      size={20}
-                    />
-                    <input
-                      type="tel"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#541418] focus:border-transparent outline-none transition-all duration-300"
-                      placeholder="Enter your phone number"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Subject *
-                  </label>
-                  <select
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#541418] focus:border-transparent outline-none transition-all duration-300"
-                  >
-                    <option value="">Select a subject</option>
-                    <option value="admission">Admission Inquiry</option>
-                    <option value="general">General Information</option>
-                    <option value="academic">Academic Programs</option>
-                    <option value="facilities">School Facilities</option>
-                    <option value="transport">Transportation</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <div className="relative">
-                  <MessageSquare
-                    className="absolute left-3 top-3 text-gray-400"
-                    size={20}
-                  />
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    required
-                    rows="5"
-                    className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#541418] focus:border-transparent outline-none transition-all duration-300 resize-none"
-                    placeholder="Write your message here..."
-                  ></textarea>
-                </div>
-              </div>
-
-              <button
-                onClick={handleSubmit}
-                className="w-full bg-[#541418] text-white py-4 px-6 rounded-lg hover:bg-red-800 transition-colors duration-300 font-medium flex items-center justify-center"
-              >
-                <Send className="mr-2" size={20} />
-                Send Message
-              </button>
-            </div>
-          </div>
-
-          {/* Map & Additional Info */}
-          <div className="space-y-8">
-            {/* Interactive Map */}
-            <div className="bg-white rounded-2xl p-4 shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                Find Us
-              </h3>
-              <div className="aspect-video bg-gray-200 rounded-lg flex items-center justify-center">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.8234567890!2d72.8891234567890!3d19.0504567890123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDAzJzAxLjYiTiA3MsKwNTMnMjAuOCJF!5e0!3m2!1sen!2sin!4v1234567890123!5m2!1sen!2sin"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="rounded-lg"
-                ></iframe>
-              </div>
-            </div>
-
-            {/* Principal Info */}
-            <div className="bg-white rounded-2xl p-4 shadow-lg">
-              <h3 className="text-xl font-semibold mb-4 text-gray-800">
-                School Leadership
-              </h3>
-              <div className="space-y-4">
-                <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                  <div className="w-12 h-12 bg-[#541418] rounded-full flex items-center justify-center mr-4">
-                    <User className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-800">
-                      Mr. Jamal Jackson
-                    </p>
-                    <p className="text-gray-600">Principal</p>
-                  </div>
-                </div>
-                <div className="flex items-center p-4 bg-gray-50 rounded-lg">
-                  <div className="w-12 h-12 bg-[#541418] rounded-full flex items-center justify-center mr-4">
-                    <User className="text-white" size={20} />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gray-800">
-                      Ms. Ranjini Krishnaswamy
-                    </p>
-                    <p className="text-gray-600">Vice Principal</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );

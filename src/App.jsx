@@ -11,6 +11,12 @@ import PrincipalMessage from "./pages/PrincipalsMessage";
 import Accreditation from "./pages/Accreditation";
 import FlagCrest from "./pages/FlagCrest";
 import FacilitiesPage from "./pages/FacilitySection";
+import Events from "./pages/Events";
+import Secondary from "./pages/Events/Secondary";
+// import Primary from "./pages/Events/Primary";
+// import PreSchool from "./pages/Events/PreSchool";
+// import Cisce from "./pages/Events/Cisce";
+// import Panvel from "./pages/Events/Panvel";
 function App() {
   return (
     <>
@@ -23,6 +29,15 @@ function App() {
           <Route path="/about/accreditation" element={<Accreditation />} />
           <Route path="/about/flag-crest-motto" element={<FlagCrest />} />
           <Route path="/facilities" element={<FacilitiesPage />} />
+          <Route path="/event-gallery" element={<Events />} />
+          {/* <Route path="/event/preschool" element={<PreSchool />} />
+          <Route
+            path="/event/cisce-basketball-tournament-2024"
+            element={<Cisce />}
+          />
+          <Route path="/event/panvel-inauguration" element={<Panvel />} />
+          <Route path="/event/primary" element={<Primary />} /> */}
+          <Route path="/event/secondary" element={<Secondary />} />
         </Routes>
         <Footer />
       </Router>

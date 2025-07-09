@@ -46,26 +46,7 @@ const Navbar = () => {
       ],
     },
     { name: "Facilities", href: "/facilities" },
-    {
-      name: "Event Gallery",
-      href: "#",
-      dropdown: [
-        {
-          name: "Pre School (21-23, 23-24, 24-25)",
-          href: "/events/pre-school",
-        },
-        { name: "Primary (21-23, 23-24)", href: "/events/primary" },
-        { name: "Secondary (21-23, 23-24)", href: "/events/secondary" },
-        {
-          name: "CISCE Basketball Tournament 2024",
-          href: "/events/basketball-tournament",
-        },
-        {
-          name: "Panvel Campus Inauguration",
-          href: "/events/panvel-inauguration",
-        },
-      ],
-    },
+    { name: "Events Gallery ", href: "/event-gallery" },
     {
       name: "Results",
       href: "#",
