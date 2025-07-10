@@ -37,7 +37,7 @@ function App() {
           />
           <Route path="/event/panvel-inauguration" element={<Panvel />} />
           <Route path="/event/primary" element={<Primary />} /> */}
-          <Route path="/event/secondary" element={<Secondary />} />
+          <Route path="/events/secondary" element={<Secondary />} />
         </Routes>
         <Footer />
       </Router>
