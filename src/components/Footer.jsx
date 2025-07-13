@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#541418] rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
-      <div className="relative px-6 py-16">
+      <div className="relative px-6 py-10">
         <div className="max-w-7xl mx-auto">
           {/* Main footer content */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
@@ -202,7 +202,10 @@ const Footer = () => {
             <div className="text-sm text-gray-400 mb-4 md:mb-0">
               &copy; 2025 St. Gregorios High School. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm">
+            <div className="text-sm text-gray-400 mb-1 md:mb-0">
+              Made by Jump Creatives
+            </div>
+            {/* <div className="flex space-x-6 text-sm">
               <a
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors duration-300"
@@ -221,7 +224,7 @@ const Footer = () => {
               >
                 Sitemap
               </a>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

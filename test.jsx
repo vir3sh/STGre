@@ -1,257 +1,102 @@
-const imageGroups = [
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/free-mode";
+import { FreeMode } from "swiper/modules";
+import { Star } from "lucide-react"; // Optional: or use image
+
+const testimonials = [
   {
-    year: "2021–2023",
-    events: [
-      {
-        name: "GK Quiz Competition",
-        images: [
-          { src: img1, caption: "Opening Ceremony" },
-          { src: img2, caption: "Track Events" },
-        ],
-      },
-      {
-        name: "Handwriting Festival",
-        images: [
-          { src: img3, caption: "Flag Hoisting" },
-          { src: img4, caption: "Cultural Dance" },
-        ],
-      },
-    ],
+    name: "Ninal Gordon",
+    role: "Student",
+    photo: "/path/to/ninal.jpg",
+    rating: 5,
+    score: 99,
+    feedback:
+      "There are many variations of tend to repeat chunks some all form necessary injected for the going are humour words.",
   },
   {
-    year: "2023–2024",
-    events: [
-      {
-        name: "Advertising Campaign",
-        images: [
-          { src: img5, caption: "Inauguration" },
-          { src: img1, caption: "Match Day 1" },
-        ],
-      },
-      {
-        name: "Annual Athletic Meet",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Annual Concert",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Bastille Day ",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Best of of Waste ",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Christmas Programme ",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Cookery Festival ",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Cynosure ",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Economics quiz ",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "English elocution ",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "English Essay Writing Festival ",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "English Handwriting Festival",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Farewell assembly",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Festival Of Songs",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "French Handwriting Festival",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Gregorian Day",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Hindi Elocution",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Hindi Essay Writing Festival",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Hindi Handwriting Festival",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Independence Day",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Inter-house Debate",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Inter-house G.K. Quiz",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Inter-House Patriotic Singing Festival",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Inter-house Rangoli Festival",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Investiture ceremony",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Marathi Handwriting Festival",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Mind Your Language",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Photography Festival",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Psychology quiz",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Republic day celebration",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Sci Fi Quiz",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Swachhata Pakhwada",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-      {
-        name: "Website designing",
-        images: [
-          { src: img2, caption: "Robotics Showcase" },
-          { src: img3, caption: "Student Projects" },
-        ],
-      },
-    ],
+    name: "Anthony Nicoll",
+    role: "Student",
+    photo: "/path/to/anthony.jpg",
+    rating: 5,
+    score: 99,
+    feedback:
+      "There are many variations of tend to repeat chunks some all form necessary injected for the going are humour words.",
   },
+  // Add more testimonials...
 ];
+
+const TestimonialSlider = () => {
+  return (
+    <section className="bg-[#0c123d] py-20 text-white relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 text-center mb-12">
+        <h4 className="uppercase text-orange-400 font-semibold text-xs tracking-widest">
+          Testimonials
+        </h4>
+        <h2 className="text-4xl font-bold mb-3">
+          What Our Students <span className="text-orange-400">Say's</span>
+        </h2>
+        <p className="text-gray-300 max-w-2xl mx-auto">
+          It is a long established fact that a reader will be distracted by the
+          readable content of a page when looking at its layout.
+        </p>
+      </div>
+
+      <Swiper
+        slidesPerView={1.2}
+        spaceBetween={20}
+        freeMode={true}
+        grabCursor={true}
+        breakpoints={{
+          640: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 },
+        }}
+        modules={[FreeMode]}
+        className="px-6"
+      >
+        {testimonials.map((t, index) => (
+          <SwiperSlide key={index}>
+            <div className="bg-white text-[#031B4E] p-6 rounded-3xl shadow-xl relative overflow-hidden border border-gray-100 transition-all hover:-translate-y-1 duration-300">
+              {/* Score badge */}
+              <div className="absolute top-0 right-0 bg-orange-400 text-white font-bold text-sm px-3 py-1 rounded-bl-2xl">
+                {t.score}
+              </div>
+
+              {/* Stars */}
+              <div className="flex mb-4">
+                {Array.from({ length: t.rating }).map((_, i) => (
+                  <Star
+                    key={i}
+                    size={16}
+                    className="text-yellow-400 fill-yellow-400"
+                  />
+                ))}
+              </div>
+
+              {/* Feedback */}
+              <p className="text-sm text-gray-600 mb-6 leading-relaxed">
+                {t.feedback}
+              </p>
+
+              {/* Footer with image */}
+              <div className="flex items-center gap-4">
+                <img
+                  src={t.photo}
+                  alt={t.name}
+                  className="w-12 h-12 rounded-full border-2 border-orange-400 object-cover"
+                />
+                <div>
+                  <h4 className="font-semibold text-sm">{t.name}</h4>
+                  <p className="text-xs text-orange-400">{t.role}</p>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </section>
+  );
+};
+
+export default TestimonialSlider;
