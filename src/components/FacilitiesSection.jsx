@@ -11,42 +11,42 @@ const facilities = [
   {
     title: "Science Lab",
     description:
-      "Well-equipped classrooms with digital boards and interactive learning tools.",
+      "Well-equipped labs for Physics, Chemistry, and Biology experiments, designed to spark inquiry and hands-on scientific learning",
     image: slab,
     tag: "Academics",
   },
   {
     title: "Infirmary",
     description:
-      "State-of-the-art labs for Physics, Chemistry, and Biology experiments.",
+      "A fully equipped medical room with a qualified nurse to handle emergencies and ensure students' health and well-being on campus",
     image: Infirmary,
     tag: "Health & Wellness",
   },
   {
     title: "Computer Lab",
     description:
-      "Extensive collection of academic and fiction books in a quiet, comfortable space.",
+      "Modern computer labs with fast internet, up-to-date software to build digital skills and computational thinking",
     image: computer,
     tag: "Technology",
   },
   {
     title: "Auditorium",
     description:
-      "Dedicated grounds and indoor setups for cricket, football, basketball and more.",
+      "A spacious, well-equipped auditorium for assemblies, cultural programs, seminars, and inter-school events, enhancing student expression and confidence",
     image: auditorium,
     tag: "Co-Curricular",
   },
   {
     title: "Music Room",
     description:
-      "Space to express creativity through music, dance, and visual arts.",
+      "An acoustically designed space for vocal and instrumental training, nurturing creativity and musical expression",
     image: music,
     tag: "Arts",
   },
   {
     title: "Library",
     description:
-      "Well-managed bus services and strict safety protocols across campus.",
+      "A well-stocked library with academic, reference, magazine, and periodical collections to instill a love of reading",
     image: library,
     tag: "Knowledge Hub",
   },
@@ -77,11 +77,11 @@ const FacilitiesSection = () => {
     <section id="facilities-section" className="py-16 bg-[#541418]">
       <div className="max-w-[1200px] mx-auto px-4">
         <div className="text-center mb-12">
-          <h4 className="text-orange-500 uppercase font-bold tracking-widest mb-2">
+          {/* <h4 className="text-orange-500 uppercase font-bold tracking-widest mb-2">
             Our Facilities
-          </h4>
+          </h4> */}
           <h2 className="text-4xl font-bold text-white">
-            Let's Check Our <span className="text-yellow-500">Facilities</span>
+            Our <span className="text-yellow-500">Facilities</span>
           </h2>
           <p className="text-[#ddd] max-w-xl mx-auto mt-2">
             Discover the infrastructure that supports academic excellence,

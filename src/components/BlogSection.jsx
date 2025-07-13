@@ -33,11 +33,8 @@ const BlogSection = () => {
               : "-translate-x-full opacity-0"
           }`}
         >
-          <h4 className="uppercase text-orange-500 font-bold text-sm tracking-widest mb-2 flex items-center gap-2">
-            Latest Blog
-          </h4>
           <h2 className="text-4xl font-bold text-[#111]">
-            Let's Check Our <span className="text-yellow-500">Latest Blog</span>
+            Our <span className="text-yellow-500">Latest Blog</span>
           </h2>
           <p className="text-gray-600 mt-4 mb-6 max-w-md">
             Explore in-depth stories, updates, and insightful articles curated

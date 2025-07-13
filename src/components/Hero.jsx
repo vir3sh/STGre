@@ -2,6 +2,8 @@ import React from "react";
 import bgHero from "../assets/stgregorious-hero-section2.webp"; // replace with your background image
 import { BookOpen, Users, Library } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Description } from "@headlessui/react";
+import { desc } from "framer-motion/client";
 
 const Hero = () => {
   return (
@@ -15,20 +17,21 @@ const Hero = () => {
       <div className="absolute inset-0 bg-black/60 z-0"></div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-20 flex flex-col lg:flex-row justify-between items-center">
+      <div className="relative z-10 max-w-[1200px] mx-auto px-6 py-10 flex flex-col lg:flex-row justify-between items-center">
         {/* Left Text */}
         <div className="w-full lg:w-1/2 text-left">
           <h2 className="uppercase tracking-widest text-yellow-400 font-bold text-sm mb-2">
-            Welcome to St Gregorios!
+            Welcome to St.Gregorios High School
           </h2>
           <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">
             Start Your Beautiful <br />
             And <span className="text-yellow-400">Bright</span> Future
           </h1>
           <p className="text-base md:text-lg text-gray-200 mb-8 max-w-lg">
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form.
+            At St. Gregorios High School, we nurture young minds with knowledge,
+            values, and skills to build a bright and successful future.
           </p>
+
           <div className="flex gap-4 flex-wrap">
             <Link
               to="/aboutus"
@@ -57,15 +60,21 @@ const Hero = () => {
         {[
           {
             icon: <BookOpen size={28} />,
-            title: "Scholarship Facility",
+            title: "Our Philosophy",
+            description:
+              "We believe in holistic education that nurtures the mind, body, and spirit, preparing students for a lifetime of learning and growth.",
           },
           {
             icon: <Users size={28} />,
-            title: "Skilled Lecturers",
+            title: "Teaching Methodology",
+            description:
+              "We employ innovative teaching methods that engage students and foster a love for learning, ensuring they are well-prepared for future challenges.",
           },
           {
             icon: <Library size={28} />,
-            title: "Book Library Facility",
+            title: "Assessments & Evaluation",
+            description:
+              "Our assessment strategies are designed to provide a comprehensive understanding of each student's progress, ensuring personalized learning paths.",
           },
         ].map((item, i) => (
           <div
@@ -77,9 +86,7 @@ const Hero = () => {
             </div>
             <div>
               <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="text-sm text-gray-600 mt-1">
-                It is a long established fact that a reader will be distracted.
-              </p>
+              <p className="text-sm text-gray-600 mt-1">{item.description}</p>
             </div>
           </div>
         ))}

@@ -54,10 +54,10 @@ const WhyChooseUs = () => {
   return (
     <section
       id="why-choose-us-section"
-      className="bg-no-repeat bg-cover bg-center bg-fixed text-white py-20 relative overflow-hidden"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-      }}
+      className="bg-no-repeat bg-[#541418] bg-cover bg-center bg-fixed text-white py-20 relative overflow-hidden"
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`,
+      // }}
     >
       {/* Background Decorations */}
       <div className="absolute inset-0 opacity-5">
@@ -90,10 +90,10 @@ const WhyChooseUs = () => {
             For Your Goal
           </h2>
 
-          <p className="text-[#b8c5d6] mb-6 text-base leading-relaxed max-w-md">
-            It is a long established fact that a reader will be distracted by
-            the readable content of a page when many desktop and web page
-            editors looking at its layout.
+          <p className="text-[#b8c5d6] mb-6 text-base leading-relaxed max-w-md text-justify">
+            Since 1992, St. Gregorios High School has stood out for academic
+            excellence, modern facilities, and a nurturing environment that
+            builds character and global readiness.
           </p>
 
           {/* Feature Cards */}

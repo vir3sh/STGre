@@ -45,15 +45,15 @@ const AboutUs = () => {
               : "translate-x-full opacity-0"
           }`}
         >
-          <h4 className="uppercase text-orange-500 font-bold text-sm tracking-wider">
+          {/* <h4 className="uppercase text-orange-500 font-bold text-sm tracking-wider">
             About Us
-          </h4>
+          </h4> */}
 
           <h2 className="text-3xl md:text-4xl font-bold text-[#541418] leading-snug">
             Education for <span className="text-yellow-500">Enlightenment</span>
           </h2>
 
-          <p className="text-gray-700 text-base md:text-lg leading-relaxed">
+          <p className="text-gray-700 text-base md:text-lg leading-relaxed text-justify">
             At St. Gregorios High School, our aim is to provide children with a
             holistic education that encourages academic excellence, nurtures
             character and promotes a love for lifelong learning. We are
@@ -64,20 +64,20 @@ const AboutUs = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
             {/* Feature 1 */}
             <div
-              className={`flex items-start gap-4 transform transition-all duration-800 ease-out delay-500 ${
+              className={`flex items-start gap-4 bg-amber-100 rounded-4xl p-3 transform transition-all duration-800 ease-out delay-500 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-8 opacity-0"
               }`}
             >
-              <div className="p-3 bg-orange-100 text-orange-500 rounded-full shadow-sm">
+              <div className="p-3 bg-orange-100 text-yellow-500 rounded-full shadow-sm">
                 <Users size={24} />
               </div>
               <div>
                 <h4 className="font-semibold text-[#541418] text-lg">
                   Experienced Educators
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 ">
                   Our expert faculty fosters academic excellence while
                   instilling strong moral values in students.
                 </p>
@@ -86,7 +86,7 @@ const AboutUs = () => {
 
             {/* Feature 2 */}
             <div
-              className={`flex items-start gap-4 transform transition-all duration-800 ease-out delay-700 ${
+              className={`flex items-start gap-4 bg-amber-100 rounded-4xl p-3 transform transition-all duration-800 ease-out delay-700 ${
                 isVisible
                   ? "translate-y-0 opacity-100"
                   : "translate-y-8 opacity-0"
@@ -97,9 +97,9 @@ const AboutUs = () => {
               </div>
               <div>
                 <h4 className="font-semibold text-[#541418] text-lg">
-                  Global <br /> Vision
+                  Global Vision
                 </h4>
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600  ">
                   We nurture global awareness through modern teaching, preparing
                   students for future challenges.
                 </p>
