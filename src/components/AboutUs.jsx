@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Users, Globe } from "lucide-react";
-import aboutusSection from "../assets/home-about-sec-1.png";
+import aboutusSection from "../assets/home-about-sec-2.webp";
 
 const AboutUs = () => {
   const [isVisible, setIsVisible] = useState(false);
