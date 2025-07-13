@@ -18,7 +18,6 @@ import Home from "./pages/Home";
 // import PreSchool from "./pages/Events/PreSchool";
 // import Cisce from "./pages/Events/Cisce";
 // import Panvel from "./pages/Events/Panvel";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 function App() {
   return (
     <>
