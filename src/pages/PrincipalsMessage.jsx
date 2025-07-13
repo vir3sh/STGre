@@ -10,7 +10,7 @@ const PrincipalMessage = () => {
       <Breadcrumb title="Principal's Message" />
       <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-indigo-50">
         {/* Header */}
-        <header className="bg-gradient-to-br from-[#541418] to-gray-900 text-white py-8 shadow-lg">
+        {/* <header className="bg-gradient-to-br from-[#541418] to-gray-900 text-white py-8 shadow-lg">
           <div className="container mx-auto px-6">
             <h1 className="text-4xl font-bold text-center mb-2">
               St. Gregorios High School
@@ -19,7 +19,7 @@ const PrincipalMessage = () => {
               Excellence in Education Since 1992
             </p>
           </div>
-        </header>
+        </header> */}
 
         <div className="container mx-auto px-6 py-12">
           {/* Principal's Message Section */}

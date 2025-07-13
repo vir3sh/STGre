@@ -34,19 +34,19 @@ const Footer = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             {/* Logo & Description */}
             <div className="lg:col-span-1">
-              <div className="flex items-center mb-6">
+              <a href="/" className="flex items-center mb-6">
                 <img
                   src={schoolLogo}
                   alt="St. Gregorios Logo"
-                  className="w-16 h-16 object-contain mr-4 rounded shadow-lg"
+                  className="w-16 h-16 object-contain mr-4 rounded"
                 />
                 <div>
-                  <h2 className="text-xl font-bold bg-gradient-to-r from-[#541418] to-red-300 bg-clip-text text-transparent">
-                    St. Gregorios
+                  <h2 className="text-xl font-bold bg-white bg-clip-text text-transparent">
+                    St Gregorios
                   </h2>
                   <p className="text-sm text-gray-300">High School</p>
                 </div>
-              </div>
+              </a>
 
               <p className="text-gray-300 leading-relaxed mb-6">
                 Committed to excellence in education and holistic development,
@@ -173,26 +173,6 @@ const Footer = () => {
                   />
                   Get Directions
                 </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Newsletter Signup */}
-          <div className="border-t border-white/10 pt-12 mb-12">
-            <div className="max-w-md mx-auto text-center">
-              <h3 className="text-lg font-semibold mb-4">Stay Connected</h3>
-              <p className="text-gray-300 text-sm mb-6">
-                Get updates on school events and announcements
-              </p>
-              <div className="flex">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
-                />
-                <button className="px-6 py-3 bg-gradient-to-r from-[#541418] to-red-700 hover:from-red-800 hover:to-[#541418] rounded-r-lg font-medium transition-all duration-300 hover:shadow-lg">
-                  Subscribe
-                </button>
               </div>
             </div>
           </div>

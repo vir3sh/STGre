@@ -95,19 +95,19 @@ const Navbar = () => {
       <div className="bg-white px-4 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center mb-6">
+          <a href="/" className="flex items-center mb-6">
             <img
               src={schoolLogo}
               alt="St. Gregorios Logo"
-              className="w-16 h-16 object-contain mr-4 rounded shadow-lg"
+              className="w-16 h-16 object-contain mr-4 rounded"
             />
             <div>
               <h2 className="text-xl font-bold bg-gradient-to-r from-[#541418] to-red-300 bg-clip-text text-transparent">
                 St. Gregorios
               </h2>
-              <p className="text-sm text-gray-300">High School</p>
+              <p className="text-sm text-black ">High School</p>
             </div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav

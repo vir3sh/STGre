@@ -1,6 +1,7 @@
 import React from "react";
-import bgHero from "../assets/stgregorious-hero-section.png"; // replace with your background image
+import bgHero from "../assets/stgregorious-hero-section2.webp"; // replace with your background image
 import { BookOpen, Users, Library } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -29,18 +30,21 @@ const Hero = () => {
             the majority have suffered alteration in some form.
           </p>
           <div className="flex gap-4 flex-wrap">
-            <button
+            <Link
+              to="/aboutus"
               className="bg-yellow-400 hover:bg-yellow-500 text-[#541418] px-6 py-3 font-semibold transition-all duration-300"
               style={{ borderRadius: "50px 50px 50px 0px" }}
             >
-              About More →
-            </button>
-            <button
+              About us →
+            </Link>
+
+            <Link
+              to="/contact"
               className="bg-white hover:bg-gray-100 text-[#541418] px-6 py-3 font-semibold transition-all duration-300"
               style={{ borderRadius: "50px 50px 50px 0px" }}
             >
               Learn More →
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -49,7 +53,7 @@ const Hero = () => {
       </div>
 
       {/* Feature Cards */}
-      <div className="relative z-10 mt-10 max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 pb-16">
+      <div className="relative z-10  mt-20 max-w-[1200px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 pb-16">
         {[
           {
             icon: <BookOpen size={28} />,
