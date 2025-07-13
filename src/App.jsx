@@ -13,6 +13,7 @@ import FlagCrest from "./pages/FlagCrest";
 import FacilitiesPage from "./pages/FacilitySection";
 import Events from "./pages/Events";
 import Secondary from "./pages/Events/Secondary";
+import Home from "./pages/Home";
 // import Primary from "./pages/Events/Primary";
 // import PreSchool from "./pages/Events/PreSchool";
 // import Cisce from "./pages/Events/Cisce";
@@ -23,7 +24,7 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<div className="p-10">Home Page</div>} />
+          <Route path="/" element={<Home />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/principal-Message" element={<PrincipalMessage />} />
           <Route path="/about/accreditation" element={<Accreditation />} />
