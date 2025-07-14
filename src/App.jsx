@@ -14,6 +14,7 @@ import FacilitiesPage from "./pages/FacilitySection";
 import Events from "./pages/Events";
 import Secondary from "./pages/Events/Secondary";
 import Home from "./pages/Home";
+import About from "./pages/About";
 // import Primary from "./pages/Events/Primary";
 // import PreSchool from "./pages/Events/PreSchool";
 // import Cisce from "./pages/Events/Cisce";
@@ -39,6 +40,7 @@ function App() {
           <Route path="/event/panvel-inauguration" element={<Panvel />} />
           <Route path="/event/primary" element={<Primary />} /> */}
           <Route path="/events/secondary" element={<Secondary />} />
+          <Route path="/about-us" element={<About />} />
         </Routes>
         <Footer />
       </Router>

@@ -1,30 +1,27 @@
 import React, { useState, useRef, useEffect } from "react";
 import { ChevronDown, Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import schoolLogo from "../assets/logo.png";
+
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const dropdownRef = useRef(null);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setActiveDropdown(null);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const menuItems = [
     { name: "Home", href: "/" },
     {
       name: "About",
-      href: "#",
+      href: "/about-us",
       dropdown: [
         { name: "Principal Message", href: "/principal-Message" },
         { name: "Trust Members", href: "/about/trust-members" },
@@ -35,7 +32,7 @@ const Navbar = () => {
     },
     {
       name: "Academics",
-      href: "#",
+      href: "/academics",
       dropdown: [
         { name: "Curriculum", href: "/academics/curriculum" },
         {
@@ -46,10 +43,10 @@ const Navbar = () => {
       ],
     },
     { name: "Facilities", href: "/facilities" },
-    { name: "Events Gallery ", href: "/event-gallery" },
+    { name: "Events Gallery", href: "/event-gallery" },
     {
       name: "Results",
-      href: "#",
+      href: "/results",
       dropdown: [
         { name: "Standard X (ICSE) 2023", href: "/results/icse-2023" },
         { name: "Standard X (ICSE) 2024", href: "/results/icse-2024" },
@@ -71,7 +68,7 @@ const Navbar = () => {
 
   return (
     <header className="relative bg-white shadow-lg z-50">
-      {/* Top Contact Bar */}
+      {/* Top Bar */}
       <div className="bg-[#541418] text-white py-2 px-4 hidden md:block">
         <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
           <div className="flex items-center space-x-6">
@@ -92,34 +89,39 @@ const Navbar = () => {
       </div>
 
       {/* Main Header */}
-      <div className="bg-white px-4 py-2">
+      <div className="bg-white px-4 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center ">
+          <a href="/" className="flex items-center mb-6">
             <img
               src={schoolLogo}
               alt="St. Gregorios Logo"
-              className="w-24 h-24 object-contain mr-4 rounded"
+              className="w-24 h-24 object-contain mr-4 rounded "
             />
             <div>
               <h2 className="text-xl font-bold bg-[#541418] bg-clip-text text-transparent">
                 St. Gregorios High School
               </h2>
-              {/* <p className="text-sm text-black "></p> */}
+              {/* <p className="text-sm text-gray-300"></p> */}
             </div>
           </a>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <nav
             className="hidden lg:flex items-center space-x-8"
             ref={dropdownRef}
           >
             {menuItems.map((item, index) => (
-              <div key={index} className="relative">
+              <div
+                key={index}
+                className="relative group"
+                onMouseEnter={() => item.dropdown && setActiveDropdown(index)}
+                onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
+              >
                 {item.dropdown ? (
-                  <div>
-                    <button
-                      onClick={() => handleDropdownToggle(index)}
+                  <>
+                    <a
+                      href={item.href}
                       className="flex items-center space-x-1 text-gray-700 hover:text-[#541418] font-medium transition-colors duration-300 py-2"
                     >
                       <span>{item.name}</span>
@@ -129,14 +131,18 @@ const Navbar = () => {
                           activeDropdown === index ? "rotate-180" : ""
                         }`}
                       />
-                    </button>
+                    </a>
 
-                    {/* Dropdown Menu */}
+                    {/* Dropdown container appears on hover and stays accessible */}
                     {activeDropdown === index && (
-                      <div className="absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 py-2 z-50">
-                        {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                      <div
+                        className="absolute top-full left-0 mt-0.10 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 py-2 z-50"
+                        onMouseEnter={() => setActiveDropdown(index)}
+                        onMouseLeave={() => setActiveDropdown(null)}
+                      >
+                        {item.dropdown.map((dropdownItem, i) => (
                           <a
-                            key={dropdownIndex}
+                            key={i}
                             href={dropdownItem.href}
                             className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#541418] transition-colors duration-200 text-sm border-b border-gray-50 last:border-b-0"
                           >
@@ -145,7 +151,7 @@ const Navbar = () => {
                         ))}
                       </div>
                     )}
-                  </div>
+                  </>
                 ) : (
                   <a
                     href={item.href}
@@ -168,7 +174,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
           <div className="px-4 py-2 max-h-96 overflow-y-auto">
@@ -178,39 +184,44 @@ const Navbar = () => {
                 className="border-b border-gray-100 last:border-b-0"
               >
                 {item.dropdown ? (
-                  <div>
-                    <button
-                      onClick={() => handleDropdownToggle(index)}
-                      className="w-full flex items-center justify-between py-3 text-gray-700 hover:text-[#541418] font-medium transition-colors duration-300"
-                    >
-                      <span>{item.name}</span>
-                      <ChevronDown
-                        size={16}
-                        className={`transform transition-transform duration-300 ${
-                          activeDropdown === index ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-
-                    {/* Mobile Dropdown */}
+                  <>
+                    <div className="flex items-center justify-between py-3">
+                      <a
+                        href={item.href}
+                        className="text-gray-700 font-medium hover:text-[#541418]"
+                      >
+                        {item.name}
+                      </a>
+                      <button
+                        onClick={() => handleDropdownToggle(index)}
+                        aria-label="Toggle Dropdown"
+                      >
+                        <ChevronDown
+                          size={16}
+                          className={`transform transition-transform duration-300 ${
+                            activeDropdown === index ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
                     {activeDropdown === index && (
                       <div className="pl-4 pb-2">
-                        {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                        {item.dropdown.map((dropdownItem, i) => (
                           <a
-                            key={dropdownIndex}
+                            key={i}
                             href={dropdownItem.href}
-                            className="block py-2 text-sm text-gray-600 hover:text-[#541418] transition-colors duration-200"
+                            className="block py-2 text-sm text-gray-600 hover:text-[#541418]"
                           >
                             {dropdownItem.name}
                           </a>
                         ))}
                       </div>
                     )}
-                  </div>
+                  </>
                 ) : (
                   <a
                     href={item.href}
-                    className="block py-3 text-gray-700 hover:text-[#541418] font-medium transition-colors duration-300"
+                    className="block py-3 text-gray-700 hover:text-[#541418] font-medium"
                   >
                     {item.name}
                   </a>
