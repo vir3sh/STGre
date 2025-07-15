@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Users } from "lucide-react";
-import whychoose from "../assets/home-about-sec-1.png";
-import backgroundImage from "../assets/whychooseus-bg.jpg";
+import whychoose from "../assets/homw-whychoose-us.png";
+// import backgroundImage from "../assets/whychooseus-bg.jpg";
 import teacher from "../assets/teacher.png";
 import moderncir from "../assets/moderncir.png";
 import skill from "../assets/skill.png";
@@ -141,27 +141,13 @@ const WhyChooseUs = () => {
           }`}
         >
           <div className="relative group">
-            <div className="absolute -inset-4 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-[90px_10px_90px_10px] blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+            {/* <div className="absolute -inset-4 bg-gradient-to-r from-orange-400 to-yellow-400 rounded-[90px_10px_90px_10px] blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div> */}
 
-            <div className="relative rounded-[80px_0px_80px_0px] overflow-hidden border-4 border-transparent bg-gradient-to-r from-orange-400 to-yellow-400 p-1">
-              <div className="rounded-[76px_0px_76px_0px] overflow-hidden bg-white">
-                <div className="w-64 sm:w-72 h-auto bg-gradient-to-br from-orange-100 via-yellow-100 to-orange-200 flex items-center justify-center relative overflow-hidden">
-                  <div className="absolute top-6 right-6 w-6 h-6 bg-orange-400 rounded-full opacity-60 animate-pulse"></div>
-                  <div className="absolute bottom-8 left-8 w-4 h-4 bg-yellow-400 rounded-full opacity-60 animate-pulse delay-1000"></div>
-
-                  <div className="text-center relative z-10 p-4">
-                    <div className="w-28 h-28 bg-gradient-to-br from-orange-400 to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl">
-                      <Users size={44} className="text-white" />
-                    </div>
-                    <img
-                      src={whychoose}
-                      alt="Why Choose Us"
-                      className="w-full object-contain"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+            <img
+              src={whychoose}
+              alt="Why Choose Us"
+              className="w-full object-contain"
+            />
           </div>
         </div>
       </div>

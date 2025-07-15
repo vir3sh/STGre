@@ -92,7 +92,7 @@ const Navbar = () => {
       <div className="bg-white px-4 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center mb-6">
+          <a href="/" className="flex items-center ">
             <img
               src={schoolLogo}
               alt="St. Gregorios Logo"

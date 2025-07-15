@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import aboutusSection from "../assets/home-about-sec-2.webp";
+import aboutusSection from "../assets/background.png";
 import phoneicon from "../assets/icon/phone.png";
 const SchoolHistory = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,11 +15,11 @@ const SchoolHistory = () => {
   }, []);
 
   return (
-    <section id="about-us-section" className="py-10 bg-white">
+    <section id="about-us-section" className="py-10 bg-white overflow-x-hidden">
       <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT: IMAGE */}
         <div
-          className={`w-full h-full transform transition-all duration-1000 ease-out ${
+          className={`w-full h-auto transform transition-all max-w-full duration-1000 ease-out ${
             isVisible
               ? "translate-x-0 opacity-100"
               : "-translate-x-full opacity-0"

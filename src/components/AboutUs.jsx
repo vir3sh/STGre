@@ -24,11 +24,11 @@ const AboutUs = () => {
   }, []);
 
   return (
-    <section id="about-us-section" className="py-10 bg-white">
+    <section id="about-us-section" className="py-10 bg-white overflow-x-hidden">
       <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* LEFT: IMAGE AREA */}
         <div
-          className={`w-full h-full transform transition-all duration-1000 ease-out ${
+          className={`w-full h-full max-w-full transform transition-all duration-1000 ease-out ${
             isVisible
               ? "translate-x-0 opacity-100"
               : "-translate-x-full opacity-0"

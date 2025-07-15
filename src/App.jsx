@@ -15,6 +15,7 @@ import Events from "./pages/Events";
 import Secondary from "./pages/Events/Secondary";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Academics from "./pages/Academics";
 // import Primary from "./pages/Events/Primary";
 // import PreSchool from "./pages/Events/PreSchool";
 // import Cisce from "./pages/Events/Cisce";
@@ -41,6 +42,7 @@ function App() {
           <Route path="/event/primary" element={<Primary />} /> */}
           <Route path="/events/secondary" element={<Secondary />} />
           <Route path="/about-us" element={<About />} />
+          <Route path="/academics" element={<Academics />} />
         </Routes>
         <Footer />
       </Router>

@@ -1,6 +1,6 @@
 @import "tailwindcss";
-*{
-  font-family:poppins;
+* {
+  font-family: Sora;
 }
 
 @layer utilities {
@@ -26,3 +26,6 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+/* * {
+  outline: 1px solid red;
+} */
