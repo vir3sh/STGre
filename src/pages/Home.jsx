@@ -4,6 +4,7 @@ import AboutUs from "../components/AboutUs";
 import FacilitiesSection from "../components/FacilitiesSection";
 import BlogSection from "../components/BlogSection";
 import WhyChooseUs from "../components/WhyChooseUs";
+import Testimonials from "../components/Testimonials";
 
 const Home = () => {
   return (
@@ -12,7 +13,8 @@ const Home = () => {
       <AboutUs />
       <FacilitiesSection />
       <BlogSection />
-      <WhyChooseUs />
+      {/* <WhyChooseUs /> */}
+      {/* <Testimonials /> */}
     </>
   );
 };

@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
 @import "tailwindcss";
+
 * {
-  font-family: Sora;
+  font-family: 'Sora', sans-serif;
 }
 
 @layer utilities {

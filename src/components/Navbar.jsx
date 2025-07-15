@@ -98,8 +98,8 @@ const Navbar = () => {
               alt="St. Gregorios Logo"
               className="w-24 h-24 object-contain mr-4 rounded "
             />
-            <div>
-              <h2 className="text-xl font-bold bg-[#541418] bg-clip-text text-transparent">
+            <div className="hidden sm:block">
+              <h2 className="text-xl font-bold bg-[#541418] bg-clip-text text-transparent ">
                 St. Gregorios High School
               </h2>
               {/* <p className="text-sm text-gray-300"></p> */}
