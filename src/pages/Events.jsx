@@ -17,13 +17,13 @@ const galleryData = [
     name: "Primary",
     slug: "primary",
     image: panvelimage2,
-    caption: "Primary Section Science Fair 2024",
+    caption: "Primary Section Cultural Fest ",
   },
   {
     name: "Secondary",
     slug: "secondary",
     image: panvelimage3,
-    caption: "Secondary Cultural Fest 2023",
+    caption: "Secondary Cultural Fest ",
   },
   {
     name: "CISCE Basketball Tournament 2024",
@@ -57,10 +57,10 @@ export default function EventsGallery() {
                   src={event.image}
                   alt={event.name}
                   className="w-full h-56 object-cover cursor-pointer"
-                  onClick={(e) => {
-                    e.preventDefault(); // Prevent lightbox on link click
-                    setLightboxImage(event);
-                  }}
+                  // onClick={(e) => {
+                  //   e.preventDefault(); // Prevent lightbox on link click
+                  //   setLightboxImage(event);
+                  // }}
                 />
                 <div className="p-4">
                   <h2 className="text-xl font-semibold text-[#541418] text-center mb-1">

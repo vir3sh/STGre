@@ -73,7 +73,7 @@ const Curriculum = () => {
         {/* Cards */}
         <div
           id="curriculum-cards"
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 "
         >
           {kids.map((kid, index) => (
             <a
@@ -81,13 +81,16 @@ const Curriculum = () => {
               href={kid.link}
               className={`group relative block rounded-[50px_50px_50px_0px] overflow-hidden ${kid.bg} shadow-lg transition-transform hover:scale-105`}
             >
+              {/* Blurred by default, clear on hover */}
               <img
                 src={kid.img}
                 alt={kid.name}
-                className="w-full h-64 sm:h-72 object-cover rounded-[50px_50px_50px_0px] transition-all duration-300 group-hover:blur-sm"
+                className="w-full h-64 sm:h-72 object-cover rounded-[50px_50px_50px_0px] transition-all duration-500 filter blur-sm group-hover:filter-none"
               />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 p-4 text-center">
-                <h3 className="text-white text-base sm:text-lg font-semibold">
+
+              {/* Always visible name overlay */}
+              <div className="absolute inset-0 flex items-center justify-center bg-black/30 p-4 text-center">
+                <h3 className="text-white text-base sm:text-lg font-semibold drop-shadow-md ">
                   {kid.name}
                 </h3>
               </div>
