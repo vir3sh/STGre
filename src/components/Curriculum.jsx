@@ -8,25 +8,25 @@ const kids = [
   {
     name: "Pre‑Primary Section",
     img: preprimary,
-    link: "#",
+    link: "#pre-primary",
     bg: "bg-purple-100",
   },
   {
     name: "Primary Section",
     img: primary,
-    link: "#",
+    link: "#primary",
     bg: "bg-yellow-100",
   },
   {
     name: "Secondary Section",
     img: secondary,
-    link: "#",
+    link: "#secondary",
     bg: "bg-green-100",
   },
   {
     name: "ISC Section",
     img: isc,
-    link: "#",
+    link: "#isc",
     bg: "bg-pink-100",
   },
 ];
@@ -55,7 +55,7 @@ const Curriculum = () => {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-10">
+        <div className="flex flex-row flex-wrap justify-center gap-4 mb-10">
           <a
             href="#curriculum-cards"
             className="bg-yellow-400 hover:bg-yellow-500 text-black px-6 py-3 rounded-full font-semibold transition"
@@ -73,7 +73,7 @@ const Curriculum = () => {
         {/* Cards */}
         <div
           id="curriculum-cards"
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 "
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6"
         >
           {kids.map((kid, index) => (
             <a
@@ -81,16 +81,19 @@ const Curriculum = () => {
               href={kid.link}
               className={`group relative block rounded-[50px_50px_50px_0px] overflow-hidden ${kid.bg} shadow-lg transition-transform hover:scale-105`}
             >
-              {/* Blurred by default, clear on hover */}
+              {/* Image */}
               <img
                 src={kid.img}
                 alt={kid.name}
-                className="w-full h-64 sm:h-72 object-cover rounded-[50px_50px_50px_0px] transition-all duration-500 filter blur-sm group-hover:filter-none"
+                className="w-full h-64 sm:h-72 object-cover rounded-[50px_50px_50px_0px] transition-all duration-500 filter blur-xs group-hover:filter-none"
               />
 
-              {/* Always visible name overlay */}
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30 p-4 text-center">
-                <h3 className="text-white text-base sm:text-lg font-semibold drop-shadow-md ">
+              {/* Permanent overlay */}
+              <div className="absolute inset-0 bg-black/50"></div>
+
+              {/* Text on top of overlay */}
+              <div className="absolute inset-0 flex items-center justify-center p-4 text-center">
+                <h3 className="text-white text-base sm:text-lg font-semibold drop-shadow-md">
                   {kid.name}
                 </h3>
               </div>

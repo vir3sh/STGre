@@ -34,7 +34,7 @@ const Navbar = () => {
       name: "Academics",
       href: "/academics",
       dropdown: [
-        { name: "Curriculum", href: "/academics/curriculum" },
+        { name: "Curriculum", href: "/academics" },
         {
           name: "Students & Teachers Achievement",
           href: "/academics/achievements",

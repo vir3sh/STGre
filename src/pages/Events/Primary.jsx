@@ -21,6 +21,23 @@ import independence1 from "../../assets/events/primary/2021-2023/independence/in
 import independence2 from "../../assets/events/primary/2021-2023/independence/independence (2).jpg";
 import independence3 from "../../assets/events/primary/2021-2023/independence/independence (3).jpg";
 import independence4 from "../../assets/events/primary/2021-2023/independence/independence (4).jpg";
+import interhousecarol1 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (1).jpeg";
+import interhousecarol16 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (2).jpg";
+import interhousecarol2 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (3).jpg";
+import interhousecarol3 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (4).jpg";
+import interhousecarol4 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (5).jpg";
+import interhousecarol5 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (6).jpg";
+import interhousecarol6 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (7).jpg";
+import interhousecarol7 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (8).jpg";
+import interhousecarol8 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (9).jpg";
+import interhousecarol9 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (10).jpg";
+import interhousecarol10 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (11).jpg";
+import interhousecarol11 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (12).jpg";
+import interhousecarol12 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (13).jpg";
+import interhousecarol13 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (14).jpg";
+import interhousecarol14 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (15).jpg";
+import interhousecarol15 from "../../assets/events/primary/2021-2023/Inter-House Carol Singing Festival/inter-house-carol-singing-festival (1).jpg";
+import mastermind from "../../assets/events/primary/2021-2023/Mastermind/mastermind.jpg";
 
 const imageGroups = [
   {
@@ -56,16 +73,26 @@ const imageGroups = [
       {
         name: "Inter-House Carol Singing Festival",
         images: [
-          { src: img3, caption: "Flag Hoisting" },
-          { src: img4, caption: "Cultural Dance" },
+          { src: interhousecarol1, caption: "Flag Hoisting" },
+          { src: interhousecarol10, caption: "Cultural Dance" },
+          { src: interhousecarol11, caption: "Cultural Dance" },
+          { src: interhousecarol12, caption: "Cultural Dance" },
+          { src: interhousecarol13, caption: "Cultural Dance" },
+          { src: interhousecarol14, caption: "Cultural Dance" },
+          { src: interhousecarol15, caption: "Cultural Dance" },
+          { src: interhousecarol2, caption: "Cultural Dance" },
+          { src: interhousecarol3, caption: "Cultural Dance" },
+          { src: interhousecarol4, caption: "Cultural Dance" },
+          { src: interhousecarol5, caption: "Cultural Dance" },
+          { src: interhousecarol6, caption: "Cultural Dance" },
+          { src: interhousecarol7, caption: "Cultural Dance" },
+          { src: interhousecarol8, caption: "Cultural Dance" },
+          { src: interhousecarol9, caption: "Cultural Dance" },
         ],
       },
       {
         name: "Mastermind",
-        images: [
-          { src: img3, caption: "Flag Hoisting" },
-          { src: img4, caption: "Cultural Dance" },
-        ],
+        images: [{ src: mastermind, caption: "Flag Hoisting" }],
       },
       {
         name: "Welcome back ot school",

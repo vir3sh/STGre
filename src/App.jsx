@@ -17,6 +17,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Academics from "./pages/Academics";
 import Primary from "./pages/Events/Primary";
+import BeyondAcademics from "./pages/BeyondAcademics";
 // import PreSchool from "./pages/Events/PreSchool";
 // import Cisce from "./pages/Events/Cisce";
 // import Panvel from "./pages/Events/Panvel";
@@ -33,6 +34,10 @@ function App() {
           <Route path="/about/flag-crest-motto" element={<FlagCrest />} />
           <Route path="/facilities" element={<FacilitiesPage />} />
           <Route path="/event-gallery" element={<Events />} />
+          <Route
+            path="/academics/beyond-academics"
+            element={<BeyondAcademics />}
+          />
           {/* <Route path="/event/preschool" element={<PreSchool />} />
           <Route
             path="/event/cisce-basketball-tournament-2024"
