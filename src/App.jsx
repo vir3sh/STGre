@@ -18,6 +18,8 @@ import About from "./pages/About";
 import Academics from "./pages/Academics";
 import Primary from "./pages/Events/Primary";
 import BeyondAcademics from "./pages/BeyondAcademics";
+import Result2023 from "./pages/Result2023";
+import Result2024 from "./pages/Result2024";
 // import PreSchool from "./pages/Events/PreSchool";
 // import Cisce from "./pages/Events/Cisce";
 // import Panvel from "./pages/Events/Panvel";
@@ -48,6 +50,8 @@ function App() {
           <Route path="/events/secondary" element={<Secondary />} />
           <Route path="/about-us" element={<About />} />
           <Route path="/academics" element={<Academics />} />
+          <Route path="/results-2023" element={<Result2023 />} />
+          <Route path="/results-2024" element={<Result2024 />} />
         </Routes>
         <Footer />
       </Router>

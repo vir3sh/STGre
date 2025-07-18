@@ -13,7 +13,6 @@ import diyaram from "../assets/results/Diya-Ram-Puri-351x241.jpg";
 import tiara from "../assets/results/Tiara-Chaudhari-351x241.jpg";
 import arpita from "../assets/results/Arpita-Karani-351x241.jpg";
 import riya from "../assets/results/Riya-Sanjay-351x241.jpg";
-
 // Class X photos
 const photosStandardX = [
   {
@@ -118,6 +117,7 @@ const photosStandardXII = [
     category: "Humanity",
   },
 ];
+
 const Result2023 = () => {
   const [selectedStandard, setSelectedStandard] = useState("X");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -135,11 +135,13 @@ const Result2023 = () => {
     setIsModalOpen(false);
   };
 
-  const nextImage = () => {
+  const nextImage = (e) => {
+    if (e) e.stopPropagation();
     setCurrentImageIndex((prev) => (prev + 1) % currentPhotos.length);
   };
 
-  const prevImage = () => {
+  const prevImage = (e) => {
+    if (e) e.stopPropagation();
     setCurrentImageIndex(
       (prev) => (prev - 1 + currentPhotos.length) % currentPhotos.length
     );
@@ -274,10 +276,6 @@ const Result2023 = () => {
                   >
                     {category} Stream
                   </h4>
-                  {/* <div
-                    className="h-0.5 w-24 mx-auto mb-6 rounded"
-                    style={{ backgroundColor: "#fcb100" }}
-                  ></div> */}
 
                   <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                     {photos.map((photo, photoIndex) => {
@@ -306,12 +304,6 @@ const Result2023 = () => {
                               <p className="text-sm text-gray-600">
                                 {photo.year}
                               </p>
-                              {/* <span
-                                className="text-xs px-2 py-1 rounded-full text-white"
-                                style={{ backgroundColor: "#541418" }}
-                              >
-                                {photo.category}
-                              </span> */}
                             </div>
                           </div>
                         </div>
@@ -342,7 +334,10 @@ const Result2023 = () => {
         >
           {/* Close Button */}
           <button
-            onClick={closeModal}
+            onClick={(e) => {
+              e.stopPropagation();
+              closeModal();
+            }}
             className="absolute top-6 right-6 z-50 bg-white text-[#541418] rounded-full p-2 shadow hover:bg-gray-100 transition"
           >
             <svg
@@ -365,7 +360,7 @@ const Result2023 = () => {
             <>
               <button
                 onClick={prevImage}
-                className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 z-50"
+                className="absolute left-6 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 z-50 transition-all"
               >
                 <svg
                   className="w-8 h-8"
@@ -384,7 +379,7 @@ const Result2023 = () => {
 
               <button
                 onClick={nextImage}
-                className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 z-50"
+                className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/10 hover:bg-white/20 text-white rounded-full p-4 z-50 transition-all"
               >
                 <svg
                   className="w-8 h-8"

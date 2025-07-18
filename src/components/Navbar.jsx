@@ -46,12 +46,10 @@ const Navbar = () => {
     { name: "Events Gallery", href: "/event-gallery" },
     {
       name: "Results",
-      href: "/results",
+      href: "#.",
       dropdown: [
-        { name: "Standard X (ICSE) 2023", href: "/results/icse-2023" },
-        { name: "Standard X (ICSE) 2024", href: "/results/icse-2024" },
-        { name: "Standard XII (ISC) 2023", href: "/results/isc-2023" },
-        { name: "Standard XII (ISC) 2024", href: "/results/isc-2024" },
+        { name: "2023", href: "/results-2023" },
+        { name: "2024", href: "/results-2024" },
       ],
     },
     { name: "Contact", href: "/contact" },
