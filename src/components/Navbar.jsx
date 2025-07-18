@@ -1,21 +1,28 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { ChevronDown, Menu, X, Phone, Mail, MapPin } from "lucide-react";
-import schoolLogo from "../assets/logo.png";
+import React from "react";
+import logo from "../assets/logo.png"; // Adjust the path as necessary
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState(null);
-  const dropdownRef = useRef(null);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState(null);
+  const mobileMenuRef = useRef(null);
 
+  // Close mobile menu or dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setActiveDropdown(null);
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        isMenuOpen
+      ) {
+        setIsMenuOpen(false);
+        setActiveMobileDropdown(null);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isMenuOpen]);
 
   const menuItems = [
     { name: "Home", href: "/" },
@@ -55,13 +62,30 @@ const Navbar = () => {
     { name: "Contact", href: "/contact" },
   ];
 
-  const handleDropdownToggle = (index) => {
-    setActiveDropdown(activeDropdown === index ? null : index);
+  const handleMobileDropdownToggle = (index) => {
+    setActiveMobileDropdown(activeMobileDropdown === index ? null : index);
   };
 
   const toggleMobileMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    setActiveDropdown(null);
+    setActiveMobileDropdown(null);
+  };
+
+  const handleMobileItemClick = (item, index) => {
+    if (item.dropdown) {
+      // If it has a dropdown, toggle the dropdown
+      handleMobileDropdownToggle(index);
+    } else {
+      // If it's a direct link, navigate and close menu
+      setIsMenuOpen(false);
+      setActiveMobileDropdown(null);
+    }
+  };
+
+  const handleMobileSubItemClick = () => {
+    // Close menu when clicking on sub-items
+    setIsMenuOpen(false);
+    setActiveMobileDropdown(null);
   };
 
   return (
@@ -90,32 +114,23 @@ const Navbar = () => {
       <div className="bg-white px-4 py-4">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           {/* Logo */}
-          <a href="/" className="flex items-center ">
+          <a href="/" className="flex items-center">
             <img
-              src={schoolLogo}
+              src={logo}
               alt="St. Gregorios Logo"
-              className="w-24 h-24 object-contain mr-4 rounded "
+              className="w-24 h-24 object-contain mr-4 rounded"
             />
             <div className="hidden sm:block">
-              <h2 className="text-xl font-bold bg-[#541418] bg-clip-text text-transparent ">
+              <h2 className="text-xl font-bold text-[#541418]">
                 St. Gregorios High School
               </h2>
-              {/* <p className="text-sm text-gray-300"></p> */}
             </div>
           </a>
 
-          {/* Desktop Nav */}
-          <nav
-            className="hidden lg:flex items-center space-x-8"
-            ref={dropdownRef}
-          >
+          {/* Desktop Nav (CSS-driven dropdowns) */}
+          <nav className="hidden lg:flex items-center space-x-8">
             {menuItems.map((item, index) => (
-              <div
-                key={index}
-                className="relative group"
-                onMouseEnter={() => item.dropdown && setActiveDropdown(index)}
-                onMouseLeave={() => item.dropdown && setActiveDropdown(null)}
-              >
+              <div key={index} className="relative group">
                 {item.dropdown ? (
                   <>
                     <a
@@ -125,30 +140,26 @@ const Navbar = () => {
                       <span>{item.name}</span>
                       <ChevronDown
                         size={16}
-                        className={`transform transition-transform duration-300 ${
-                          activeDropdown === index ? "rotate-180" : ""
-                        }`}
+                        className="transform transition-transform duration-300 group-hover:rotate-180"
                       />
                     </a>
 
-                    {/* Dropdown container appears on hover and stays accessible */}
-                    {activeDropdown === index && (
-                      <div
-                        className="absolute top-full left-0 mt-0.10 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 py-2 z-50"
-                        onMouseEnter={() => setActiveDropdown(index)}
-                        onMouseLeave={() => setActiveDropdown(null)}
-                      >
-                        {item.dropdown.map((dropdownItem, i) => (
-                          <a
-                            key={i}
-                            href={dropdownItem.href}
-                            className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#541418] transition-colors duration-200 text-sm border-b border-gray-50 last:border-b-0"
-                          >
-                            {dropdownItem.name}
-                          </a>
-                        ))}
-                      </div>
-                    )}
+                    {/* Dropdown container appears on hover */}
+                    <div
+                      className="absolute top-full left-0 mt-0.10 w-80 bg-white rounded-lg shadow-2xl border border-gray-100 py-2 z-50
+                                  hidden group-hover:block opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0
+                                  transition-all duration-300 ease-out"
+                    >
+                      {item.dropdown.map((dropdownItem, i) => (
+                        <a
+                          key={i}
+                          href={dropdownItem.href}
+                          className="block px-4 py-3 text-gray-700 hover:bg-gray-50 hover:text-[#541418] transition-colors duration-200 text-sm border-b border-gray-50 last:border-b-0"
+                        >
+                          {dropdownItem.name}
+                        </a>
+                      ))}
+                    </div>
                   </>
                 ) : (
                   <a
@@ -166,6 +177,7 @@ const Navbar = () => {
           <button
             onClick={toggleMobileMenu}
             className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-300"
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -174,7 +186,10 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-200 shadow-lg">
+        <div
+          className="lg:hidden bg-white border-t border-gray-200 shadow-lg z-50"
+          ref={mobileMenuRef}
+        >
           <div className="px-4 py-2 max-h-96 overflow-y-auto">
             {menuItems.map((item, index) => (
               <div
@@ -183,32 +198,47 @@ const Navbar = () => {
               >
                 {item.dropdown ? (
                   <>
+                    {/* Main item with dropdown */}
                     <div className="flex items-center justify-between py-3">
                       <a
                         href={item.href}
-                        className="text-gray-700 font-medium hover:text-[#541418]"
+                        onClick={(e) => {
+                          // Only prevent default if it's a placeholder link
+                          if (item.href === "#.") {
+                            e.preventDefault();
+                          } else {
+                            // Allow navigation to the main page
+                            setIsMenuOpen(false);
+                            setActiveMobileDropdown(null);
+                          }
+                        }}
+                        className="text-gray-700 font-medium hover:text-[#541418] flex-grow"
                       >
                         {item.name}
                       </a>
                       <button
-                        onClick={() => handleDropdownToggle(index)}
-                        aria-label="Toggle Dropdown"
+                        onClick={() => handleMobileDropdownToggle(index)}
+                        aria-label={`Toggle ${item.name} Dropdown`}
+                        className="ml-2 p-1 hover:bg-gray-100 rounded"
                       >
                         <ChevronDown
                           size={16}
                           className={`transform transition-transform duration-300 ${
-                            activeDropdown === index ? "rotate-180" : ""
+                            activeMobileDropdown === index ? "rotate-180" : ""
                           }`}
                         />
                       </button>
                     </div>
-                    {activeDropdown === index && (
-                      <div className="pl-4 pb-2">
+
+                    {/* Dropdown items */}
+                    {activeMobileDropdown === index && (
+                      <div className="pl-4 pb-2 bg-gray-50 rounded-md mb-2">
                         {item.dropdown.map((dropdownItem, i) => (
                           <a
                             key={i}
                             href={dropdownItem.href}
-                            className="block py-2 text-sm text-gray-600 hover:text-[#541418]"
+                            className="block py-2 text-sm text-gray-600 hover:text-[#541418] hover:bg-gray-100 rounded px-2 transition-colors duration-200"
+                            onClick={handleMobileSubItemClick}
                           >
                             {dropdownItem.name}
                           </a>
@@ -220,6 +250,7 @@ const Navbar = () => {
                   <a
                     href={item.href}
                     className="block py-3 text-gray-700 hover:text-[#541418] font-medium"
+                    onClick={() => handleMobileItemClick(item, index)}
                   >
                     {item.name}
                   </a>
