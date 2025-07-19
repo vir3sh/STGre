@@ -34,20 +34,20 @@ const Hero = () => {
 
           <div className="flex gap-4 flex-wrap">
             <Link
-              to="/aboutus"
+              to="/contact"
               className="bg-yellow-400 hover:bg-yellow-500 text-[#541418] px-6 py-3 font-semibold transition-all duration-300"
               style={{ borderRadius: "50px 50px 50px 0px" }}
             >
-              About us →
+              Contact us →
             </Link>
-
+            {/* 
             <Link
               to="/contact"
               className="bg-white hover:bg-gray-100 text-[#541418] px-6 py-3 font-semibold transition-all duration-300"
               style={{ borderRadius: "50px 50px 50px 0px" }}
             >
               Learn More →
-            </Link>
+            </Link> */}
           </div>
         </div>
 

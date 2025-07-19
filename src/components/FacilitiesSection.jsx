@@ -92,7 +92,7 @@ const FacilitiesSection = () => {
         <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {facilities.map((facility, index) => (
             <a
-              href="/facilities"
+              href="#."
               key={index}
               className={`bg-white border border-[#fcb900] overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 group transform ${
                 isVisible

@@ -38,23 +38,48 @@ const TrustforAbout = () => {
       </div>
 
       {/* Static Grid Layout */}
-      <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-md shadow-gray-300 p-2 text-center transition-transform duration-300 hover:scale-105 rounded-[50px_50px_50px_0px]"
-          >
-            <img
-              src={member.image}
-              alt={member.name}
-              className="w-82 h-82 object-cover rounded-[50px_50px_50px_0px] mx-auto mb-4 "
-            />
-            <h3 className="text-xl font-semibold text-[#541418]">
-              {member.name}
-            </h3>
-            <p className="text-sm text-gray-600">{member.position}</p>
+      <div className="max-w-6xl mx-auto px-4 space-y-8">
+        {/* First row - 3 items */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {teamMembers.slice(0, 3).map((member, index) => (
+            <div
+              key={index}
+              className="bg-white shadow-md shadow-gray-300 p-2 text-center transition-transform duration-300 hover:scale-105 rounded-[50px_50px_50px_0px]"
+            >
+              <img
+                src={member.image}
+                alt={member.name}
+                className="w-82 h-82 object-cover rounded-[50px_50px_50px_0px] mx-auto mb-4"
+              />
+              <h3 className="text-xl font-semibold text-[#541418]">
+                {member.name}
+              </h3>
+              <p className="text-sm text-gray-600">{member.position}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Second row - 2 items centered */}
+        <div className="flex justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl">
+            {teamMembers.slice(3).map((member, index) => (
+              <div
+                key={index + 3}
+                className="bg-white shadow-md shadow-gray-300 p-2 text-center transition-transform duration-300 hover:scale-105 rounded-[50px_50px_50px_0px]"
+              >
+                <img
+                  src={member.image}
+                  alt={member.name}
+                  className="w-82 h-82 object-cover rounded-[50px_50px_50px_0px] mx-auto mb-4"
+                />
+                <h3 className="text-xl font-semibold text-[#541418]">
+                  {member.name}
+                </h3>
+                <p className="text-sm text-gray-600">{member.position}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );

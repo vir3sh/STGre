@@ -55,9 +55,9 @@ const PortfolioSection = () => (
           <div className="absolute inset-0 flex flex-col justify-end p-6 bg-black/60 opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 duration-300 text-left">
             <h3 className="text-lg font-bold text-white mb-2">{title}</h3>
             <p className="text-sm text-white mb-4">{description}</p>
-            <button className="w-10 h-10 rounded-full bg-[#541418] text-white flex items-center justify-center shrink-0">
+            {/* <button className="w-10 h-10 rounded-full bg-[#541418] text-white flex items-center justify-center shrink-0">
               <span className="text-xl leading-none">&#8594;</span>
-            </button>
+            </button> */}
           </div>
         </div>
       ))}

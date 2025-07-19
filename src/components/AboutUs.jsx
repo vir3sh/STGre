@@ -123,15 +123,15 @@ const AboutUs = () => {
             </a>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-green-100 text-green-600 flex items-center justify-center rounded-full font-bold text-xl">
+              {/* <div className="w-10 h-10 bg-green-100 text-green-600 flex items-center justify-center rounded-full font-bold text-xl">
                 📞
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <p className="text-sm text-gray-500">Call Now</p>
                 <p className="text-[#541418] font-semibold text-lg">
                   +91 22 3511 2723
                 </p>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
